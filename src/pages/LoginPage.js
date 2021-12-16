@@ -22,7 +22,9 @@ import Navbar from "../components/menu/Navbarmenu";
 
 
 //importo llamada a endpoint
-import {login, getUsers, getHijosByName, getvacunasByMail} from "../controller/miApp.controller";
+import {getvacunasByMail} from "../controller/vacuna.controller";
+import {getHijosByName} from "../controller/hijo.controller"
+import {login, getUsers} from "../controller/user.controller";
 
 const useStyles = makeStyles(styles);
 

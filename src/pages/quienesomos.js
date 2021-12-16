@@ -1,5 +1,4 @@
 import "../App.css";
-import Titulo from '../components/titulo';
 import {
   Container,
 } from 'reactstrap';

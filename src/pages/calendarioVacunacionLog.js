@@ -5,23 +5,18 @@ import {
 } from 'reactstrap';
 import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import DropdownMenu from "../components/dropdownsMenu/dropdownMenuCV";
-import DropdownMenuHijo from "../components/dropdownsMenu/dropdownMenuHijo";
 import Button from '@material-ui/core/Button';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Calendar from '../components/calendarioVacunacion/components/Aver'
 import MenuItem from '@material-ui/core/MenuItem';
 import { Card, Stack } from '@mui/material';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import TextField from '@material-ui/core/TextField';
-import {addVacuna, getHijosByName, getvacunasByMail, vacunaExistente} from "../controller/miApp.controller";
+import {addVacuna, getvacunasByMail} from "../controller/vacuna.controller";
+import { getHijosByName } from "../controller/hijo.controller";
 import { Icon } from '@iconify/react';
 import NavbarLog from "../components/menu/Navbarmenu";
 
@@ -148,13 +143,10 @@ function VisitasPediatricas() {
       ]
 
   const ARRAYVACUNA = JSON.parse(localStorage.getItem('arrayVacuna'))
-  console.log(ARRAYVACUNA)
 
   const ARRAYHIJOS = JSON.parse(localStorage.getItem('arrayHijos'))
-  console.log('arrayhijos', ARRAYHIJOS)
 
   const NOMBRESHIJOS = localStorage.getItem('nombresHijos')
-  console.log('nombres de los hijos', NOMBRESHIJOS)
   const vacunado= async function()
   {
       let datos = {

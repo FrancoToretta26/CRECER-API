@@ -18,7 +18,9 @@
     import NavbarLog from "../components/menu/Navbarmenu";
     
 //importo llamada a endpoint
-import {agregarHijo} from "../controller/miApp.controller";
+import {agregarHijo} from "../controller/hijo.controller";
+import {addVacuna, getvacunasByMail} from "../controller/vacuna.controller";
+import { getHijosByName } from "../controller/hijo.controller";
 
     function Copyright() {
       return (
@@ -1386,11 +1388,14 @@ setsangreDropdown(event.target.value);
  //Valido campos y llamo endpoint
  const loginUser= async function()
  {
+  if (name!=="" && dni!=="" && altura!=="" && peso!==""  && diametroCabeza!=="" && edad!="")
+  {
      let datos = {
        name: name,
        genero: genero,
        altura: altura,
        peso: peso,
+       dni: dni,
        diametroCabeza: diametroCabeza,
        grupoSanguineo: grupoSanguineo,
        alergias: alergias,
@@ -1398,9 +1403,14 @@ setsangreDropdown(event.target.value);
        edad:edad,
      }
      let getRegistro = await agregarHijo(datos)
+     let getHijos = await getHijosByName()
+     let getVacunas = await getvacunasByMail()
      alert('Tu hijo ha sido creado con exito')
      window.location.reload(false)
-   
+    }
+    else{
+      alert('Complete los campos obligatorios')
+    }
  }  
       return (
         <div>
@@ -1489,6 +1499,7 @@ setsangreDropdown(event.target.value);
                   select
                   label="Edad"
                   fullWidth
+                  required
                   type="edad"
                   name="edad"
                   value={edadDropdown}
@@ -1513,6 +1524,7 @@ setsangreDropdown(event.target.value);
                   select
                   label="Altura"
                   fullWidth
+                  required
                   type="altura"
                   name="altura"
                   value={alturaDropdown}
@@ -1538,6 +1550,7 @@ setsangreDropdown(event.target.value);
                   select
                   label="Peso"
                   fullWidth
+                  required
                   type="peso"
                   name="peso"
                   value={pesoDropdown}
@@ -1560,6 +1573,7 @@ setsangreDropdown(event.target.value);
                 <TextField
                   id="diametroCabeza"
                   select
+                  required
                   label="Diametro de Cabeza"
                   fullWidth
                   type="diametroCabeza"
@@ -1607,7 +1621,6 @@ setsangreDropdown(event.target.value);
                         <TextField
                   variant="outlined"
                   margin="normal"
-                  required
                   fullWidth
                   id="alergias"
                   label="Alergias"
@@ -1625,7 +1638,6 @@ setsangreDropdown(event.target.value);
                                 <TextField
                   variant="outlined"
                   margin="normal"
-                  required
                   fullWidth
                   id="enfermedades"
                   label="Enfermedades"

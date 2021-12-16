@@ -4,13 +4,6 @@ import {
 } from 'reactstrap';
 import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import DatePicker from "../components/datepicker";
-import Imagen from "../components/perfil/imagen";
-import Button from '@material-ui/core/Button';
-import DropdownMenuHijo from '../components/dropdownsMenu/dropdownMenuHijo'
 import PercentilPeso from '../img/PercentilPeso.png'
 import PercentilAltura from '../img/PercentilAltura'
 import PercentilCabeza from '../img/PercentilCabeza.png'

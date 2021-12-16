@@ -11,7 +11,6 @@ import QuienesSomos from "./pages/quienesomos";
 import Login from "./pages/LoginPage";
 import Registro from "./pages/RegisterPage"
 import Footer from "./components/footer";
-import Navbarmenu from './components/menu/Navbarmenu';
 import VisitasPediatricas from './pages/VisitasPediatricas';
 import Contacto from "./pages/Contact";
 import OlvidoContraseña from "./pages/OlvidoContraseña/olvido-contraseñaDNI";
@@ -27,8 +26,6 @@ import ControlPediatrico from './pages/ControlPediatrico'
 import CambiarContraseña from "./pages/CambioContraseña"
 import ModificarHijo from "./pages/modificarhijo"
 import { createBrowserHistory } from "history";
-import HomeLogueada from "./pages/HomeLogueado"
-import Prueba from "./pages/prueba";
 
 
 var hist = createBrowserHistory();
@@ -42,7 +39,6 @@ function App() {
         <Route path="/" exact={true} component={Home}/>
         <Route path="/registro" component={Registro}/>
         <Route path="/login" component={Login}/>
-        <Route path="/prueba" component={Prueba}/>
         <Route path="/modificar-niño" component={ModificarHijo}/>
           <Route path="/olvido-contraseña">
             <OlvidoContraseña/>
@@ -98,7 +94,7 @@ function App() {
           <Route path="/cambioContraseña">
             <CambiarContraseña/>
           </Route>
-          <Route path='/home' component={HomeLogueada}>
+          <Route path='/home' component={Home}>
           </Route>
   
 

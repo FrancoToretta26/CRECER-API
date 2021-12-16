@@ -1,26 +1,17 @@
-import DatePicker from "../components/datepicker";
     import React from 'react';
-    import Avatar from '@material-ui/core/Avatar';
     import Button from '@material-ui/core/Button';
     import CssBaseline from '@material-ui/core/CssBaseline';
     import TextField from '@material-ui/core/TextField';
-    import FormControlLabel from '@material-ui/core/FormControlLabel';
-    import Checkbox from '@material-ui/core/Checkbox';
     import Link from '@material-ui/core/Link';
     import Paper from '@material-ui/core/Paper';
     import Box from '@material-ui/core/Box';
     import Grid from '@material-ui/core/Grid';
-    import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
     import Typography from '@material-ui/core/Typography';
     import { makeStyles } from '@material-ui/styles';
-    import { Form, Field } from "@leveluptuts/fresh";
-    import MenuItem from '@material-ui/core/MenuItem';
     import Icono from "../img/ModificarPerfil.png";
-    import Footer from "../components/footer"
-    import SocialMedia from '../components/socialmedia';
     import NavbarLog from "../components/menu/Navbarmenu";
 
-    import {updateUser} from "../controller/miApp.controller";
+    import {updateUser} from "../controller/user.controller";
 
     
     function Copyright() {
@@ -36,14 +27,7 @@ import DatePicker from "../components/datepicker";
       );
     }
     
-    
-    const securityQuestions = [
-      {label:"¿Cual es el nombre de tu primera mascota?"},
-      {label:"¿Cual fue el nombre de tu escuela primaria?"},
-      {label:"¿Cual es el apellido de soltera de tu madre?"},
-      {label:"¿Cual es el nombre de la ciudad donde naciste?"}
-    ];
-    
+  
     
     const useStyles = makeStyles((theme) => ({
       root: {
@@ -89,7 +73,6 @@ import DatePicker from "../components/datepicker";
         setPassword(event.target.value);
       }
 
-      //Valido campos y llamo endpoint
     const updateUserFunc= async function()
  {
      let datos = {

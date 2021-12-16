@@ -1,6 +1,5 @@
 
 import styled from "styled-components";
-import Carrusel2 from "../components/carruselCard";
 import Imagen from "../img/contacto.png";
 import Navbar from "../components/menu/Navbarmenu";
 

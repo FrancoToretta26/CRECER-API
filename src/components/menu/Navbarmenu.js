@@ -2,7 +2,8 @@ import React,{useState} from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import logo from '../../img/ChildrenLogo.png';
-import {getHijosByName, getvacunasByMail} from "../../controller/miApp.controller";
+import {getvacunasByMail} from "../../controller/vacuna.controller";
+import {getHijosByName} from "../../controller/hijo.controller"
 
 
 const Navbarmenu = () => {
@@ -81,7 +82,7 @@ if(localStorage.getItem('emailSave')){
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/agregarNiño`}> Agregar Niño</NavLink> </li>
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/modificar-niño`}> Modificar Niño</NavLink> </li>
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/modificar-perfil`}> Modificar Perfil </NavLink> </li>
-                        <li> <NavLink onClick={() => { localStorage.clear() }} activeClassName='is-active'  to={`/home`}> Cerrar Sesion </NavLink> </li>
+                        <li> <NavLink onClick={() => { localStorage.removeItem('emailSave') }} activeClassName='is-active'  to={`/home`}> Cerrar Sesion </NavLink> </li>
                     </ul>
                     </li>         
                 </ul>

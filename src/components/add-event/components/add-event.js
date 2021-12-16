@@ -3,12 +3,8 @@ import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import "./add-event.css";
-import DropdownPeso from '../../dropdownsMenu/dropdownCalendario/dropdownPesoCAL';
-import DropdownAltura from '../../dropdownsMenu/dropdownCalendario/dropdownAlturaCAL';
-import DropdownCabeza from '../../dropdownsMenu/dropdownCalendario/dropdownCabezaCAL'
-import DropdownHijo from '../../dropdownsMenu/dropdownMenuHijo'
 import MenuItem from '@material-ui/core/MenuItem';
-import { addVisita } from "../../../controller/miApp.controller"
+import { addVisita } from "../../../controller/visita.controller"
 
 
 class AddEventModal extends Component {
@@ -28,7 +24,6 @@ class AddEventModal extends Component {
   submitForm = e => {
     e.preventDefault();
     const { date, id, title, description, time, diametroCabeza, medicamento, dosis, periodo, peso, altura, name, estudios, resultados } = this.state.eventToEdit
-    console.log({ date, id, title, description, diametroCabeza, medicamento, dosis, time, periodo, peso, altura, name, estudios, resultados })
 
       this.state.handleFormSubmit({
         id,

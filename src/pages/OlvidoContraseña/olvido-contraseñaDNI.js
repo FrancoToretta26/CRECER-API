@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import Icono from "../../img/OlvidoContraseña.png";
 import Imagen from '../../img/CambioContra.jpg';
-import { sendMail } from "../../controller/miApp.controller"
+import { sendMail } from "../../controller/user.controller"
 
 
 

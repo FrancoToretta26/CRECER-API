@@ -25,7 +25,7 @@ import Navbar from "../components/menu/Navbarmenu";
 
 
 //importo llamada a endpoint
-import {registro} from "../controller/miApp.controller";
+import {registro} from "../controller/user.controller";
 
 const useStyles = makeStyles(styles);
 
@@ -100,7 +100,7 @@ export default function RegisterPage(props) {
   //Valido campos y llamo endpoint
   const loginUser= async function()
   {
-    if (email!=="" && password!=="" && name!=="" && numeroCelular!==""  && dni!=="" && preguntaSeguridad!=="" && respuestaSeguridad!=="")
+    if (email!=="" && password!=="" && name!=="" && numeroCelular!==""  && dni!=="")
     {
       let datos = {
         email: email,
@@ -108,12 +108,9 @@ export default function RegisterPage(props) {
         name: name,
         numeroCelular: numeroCelular,
         dni: dni,
-        preguntaSeguridad: preguntaSeguridad,
-        respuestaSeguridad: respuestaSeguridad
       }
       setUsuarioValido(true);
       let nuevoRegistro = await registro(datos)
-      console.log(nuevoRegistro)
       if(nuevoRegistro){
         alert('Se ha registrado con exito');
       }
@@ -243,45 +240,6 @@ export default function RegisterPage(props) {
                     )
                   }}
                 />
-                               <TextField
-                  id="preguntaSeguridad"
-                  select
-                  label="Pregunta de Seguridad"
-                  fullWidth
-                  type="preguntaSeguridad"
-                  name="preguntaSeguridad"
-                  value={preguntaDropdown}
-                  onChange={handleChangePregunta}
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    type: "preguntaSeguridad",
-                    onChange: (event) => handlepreguntaSeguridad(event),
-                  }}
-                  >
-                  {preguntaSeg.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                  </MenuItem>
-                  ))}
-                </TextField>
-                                                  <CustomInput
-                  labelText="Respuesta de Seguridad"
-                  id="respuestaSeguridad"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    type: "respuestaSeguridad",
-                    onChange: (event) => handlerespuestaSeguridad(event),
-                    endAdornment: (
-                      <InputAdornment position="end">
-                      </InputAdornment>
-                    )
-                  }}
-                />
-
                 
               </CardBody>
               <CardFooter className={classes.cardFooter}>

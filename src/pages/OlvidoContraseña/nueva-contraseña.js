@@ -13,6 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import Icono from "../../img/OlvidoContraseña.png";
+import {updateUser} from "../../controller/user.controller"
 
 
 function Copyright() {
@@ -51,6 +52,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+  const [password, setPassword] =React.useState('');
+  const [confirmpassword, setConfirmPassword] =React.useState('');
+
+  const handlePassword=(event)=>{
+    setPassword(event.target.value);
+  }
+
+  const handleConfirmPassword=(event)=>{
+    setConfirmPassword(event.target.value);
+  }
+
+  const updateUserFunc= async function()
+{
+    let datos = {
+      email: localStorage.getItem('destinatario'),
+      password: password,
+    }
+    let getUpdate = await updateUser(datos)
+  
+}  
+
+
+
 
   return (
     <Grid container component="loginmain" className={classes.root}>
@@ -69,11 +93,18 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
-              id="new-password"
+              id="password"
               label="Nueva Contraseña"
-              name="new-password"
-              autoComplete="new-password"
+              name="password"
+              autoComplete="password"
               autoFocus
+              formControlProps={{
+                fullWidth: true
+              }}
+              inputProps={{
+                type: "password",
+                onChange: (event) => handlePassword(event),
+              }}
             />
                        <TextField
               variant="outlined"
@@ -85,12 +116,20 @@ export default function SignInSide() {
               name="confirm-np"
               autoComplete="confirm-np"
               autoFocus
+              formControlProps={{
+                fullWidth: true
+              }}
+              inputProps={{
+                type: "confirmpassword",
+                onChange: (event) => handleConfirmPassword(event),
+              }}
             />
             <Button href="/login"
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
+              onClick={updateUserFunc}
               className={classes.submit}
             >
               Enviar

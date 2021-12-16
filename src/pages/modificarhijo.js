@@ -7,13 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import DatePicker from "../components/datepicker";
-import Imagen from "../components/perfil/imagen";
 import Button from '@material-ui/core/Button';
-import DropdownMenuHijo from '../components/dropdownsMenu/dropdownMenuHijo'
-import PercentilPeso from '../img/PercentilPeso.png'
-import PercentilAltura from '../img/PercentilAltura'
-import PercentilCabeza from '../img/PercentilCabeza.png';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Card, Stack } from '@mui/material';
 import { maxHeight } from "@material-ui/system";
@@ -22,7 +16,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { render } from "react-dom";
 import { Icon } from '@iconify/react';
-import {updateHijo, getHijosByName, getvacunasByMail} from "../controller/miApp.controller";
+import {getvacunasByMail} from "../controller/vacuna.controller";
+import {updateHijo, getHijosByName} from "../controller/hijo.controller";
 import NavbarLog from "../components/menu/Navbarmenu";
 
 
@@ -1178,9 +1173,7 @@ export default function CalculoPercentil(props) {
   }  
 
   const ARRAYHIJOS = JSON.parse(localStorage.getItem('arrayHijos'))
-  console.log('arrayhijos',ARRAYHIJOS)
-  var nombresPA = []
-  console.log('el lenght', ARRAYHIJOS.length)
+
 
 
   

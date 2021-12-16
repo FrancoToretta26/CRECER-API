@@ -8,13 +8,14 @@ import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Navbar from "../components/menu/Navbarmenu";
-import DropdownMenuHijo from "../components/dropdownsMenu/dropdownMenuHijo";
 import ControlPediatricoImg from '../img/ControlPediatrico.jpg'
 import NavbarLog from "../components/menu/Navbarmenu";
+
 
 function VisitasPediatricas() { 
     return (
       <div className="PediatrAR">
+      <Navbar></Navbar>
       <React.Fragment>
         <NavbarLog/>
         <CssBaseline />

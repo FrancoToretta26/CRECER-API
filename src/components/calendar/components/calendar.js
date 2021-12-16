@@ -18,7 +18,8 @@ import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { withTranslation } from "react-i18next";
 import "./calendar.css";
-import { addVisita, updateHijo } from "../../../controller/miApp.controller"
+import {addVisita} from "../../../controller/visita.controller"
+import {updateHijo} from "../../../controller/hijo.controller"
 
 
 const EVENT_LIMIT = 5;
