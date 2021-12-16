@@ -37,36 +37,18 @@ export const registro= async function(registro)
         console.log("response",response);
         let data = await response.json();
         console.log("jsonresponse",data);
-            switch(rdo)
-            {
-                case 201:
-                {
-                    //guardo token
-                    localStorage.setItem("x",data.loginUser.token);
-                    //guardo usuario logueado
-                    let user = data.loginUser.user;
-                    localStorage.setItem("nombre",user.name);
-                    localStorage.setItem("email",user.email);
-                    
-                    return ({rdo:0,mensaje:"Ok"});//correcto
-                }
-                case 202:
-                {
-                    //error mail
-                    return ({rdo:1,mensaje:"El mail ingresado no existe en nuestra base."});
-                }
-                case 203:
-                {
-                    //error password
-                    return ({rdo:1,mensaje:"La contraseña no es correcta."});
-                }
-                default:
-                {
-                    //otro error
-                    return ({rdo:1,mensaje:"Ha ocurrido un error"});                
-                }
+        switch(rdo)
+        {
+            case 200:   
+            { 
+                return ({rdo:0,mensaje:"Ok"});//correcto
+            }
+            case 201:   
+            { 
+                return ({rdo:0,mensaje:"Ok"});//correcto
             }
     }
+}
     catch(error)
     {
         console.log("error",error);

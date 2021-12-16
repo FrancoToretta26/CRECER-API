@@ -1317,6 +1317,7 @@ class AddEventModal extends Component {
 
     return (
       <div>
+
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
@@ -1324,6 +1325,9 @@ class AddEventModal extends Component {
           onClose={this.state.toggleModal}
         >
           <div className="paper add-event-modal">
+          <br></br>
+        <br></br>
+        <br></br>
             <center>
               <h2 id="simple-modal-title">Ingrese Control Pediatrico</h2>
             </center>
@@ -1332,11 +1336,12 @@ class AddEventModal extends Component {
                 <TextField
                   required
                   id={name}
-                  label="name"
+                  label="Seleccionar Hijo"
                   defaultValue={name}
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  size='small'
                   select
                   onChange={e => this.setname(e.target.value)}
                 >
@@ -1355,6 +1360,7 @@ class AddEventModal extends Component {
                   defaultValue="07:30"
                   label="Horario"
                   defaultValue={time}
+                  size='small'
                   variant="outlined"
                   fullWidth
                   margin="normal"
@@ -1373,6 +1379,7 @@ class AddEventModal extends Component {
                   id={title}
                   label="Pediatra"
                   defaultValue={title}
+                  size='small'
                   variant="outlined"
                   margin="normal"
                   fullWidth
@@ -1386,6 +1393,7 @@ class AddEventModal extends Component {
                   label="Observaciones"
                   defaultValue={description}
                   variant="outlined"
+                  size='small'
                   margin="normal"
                   fullWidth
                   onChange={e => this.setDescription(e.target.value)}
@@ -1395,10 +1403,11 @@ class AddEventModal extends Component {
                 <TextField
                   required
                   id={diametroCabeza}
-                  label="diametroCabeza Cabeza"
+                  label="Diametro de Cabeza"
                   defaultValue={diametroCabeza}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   select
                   onChange={e => this.setdiametroCabeza(e.target.value)}
@@ -1418,6 +1427,7 @@ class AddEventModal extends Component {
                   defaultValue={altura}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   select
                   onChange={e => this.setAltura(e.target.value)}
@@ -1435,6 +1445,7 @@ class AddEventModal extends Component {
                   id={peso}
                   label="Peso"
                   defaultValue={peso}
+                  size='small'
                   variant="outlined"
                   margin="normal"
                   fullWidth
@@ -1456,6 +1467,7 @@ class AddEventModal extends Component {
                   defaultValue={medicamento}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   onChange={e => this.setmedicamento(e.target.value)}
                 />
@@ -1467,6 +1479,7 @@ class AddEventModal extends Component {
                   label="Dosis (en Mg)"
                   defaultValue={dosis}
                   variant="outlined"
+                  size='small'
                   margin="normal"
                   fullWidth
                   onChange={e => this.setDosis(e.target.value)}
@@ -1480,6 +1493,7 @@ class AddEventModal extends Component {
                   defaultValue={periodo}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   onChange={e => this.setPeriodo(e.target.value)}
                 />
@@ -1492,6 +1506,7 @@ class AddEventModal extends Component {
                   defaultValue={estudios}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   onChange={e => this.setEstudios(e.target.value)}
                 />
@@ -1504,6 +1519,7 @@ class AddEventModal extends Component {
                   defaultValue={resultados}
                   variant="outlined"
                   margin="normal"
+                  size='small'
                   fullWidth
                   onChange={e => this.setResultados(e.target.value)}
                 />

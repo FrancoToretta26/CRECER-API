@@ -112,8 +112,14 @@ export default function RegisterPage(props) {
         respuestaSeguridad: respuestaSeguridad
       }
       setUsuarioValido(true);
-      let getRegistro = await registro(datos)
-      alert('Se ha registrado con exito')
+      let nuevoRegistro = await registro(datos)
+      console.log(nuevoRegistro)
+      if(nuevoRegistro){
+        alert('Se ha registrado con exito');
+      }
+      if(!nuevoRegistro){
+        alert('El mail ingresado ya posee una cuenta, intentelo nuevamente');
+      }
     }
     else
     {
