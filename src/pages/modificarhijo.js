@@ -23,7 +23,7 @@ import Typography from '@material-ui/core/Typography';
 import { render } from "react-dom";
 import { Icon } from '@iconify/react';
 import {updateHijo, getHijosByName, getvacunasByMail} from "../controller/miApp.controller";
-import NavbarLog from "../components/menu/NavbarmenuLog";
+import NavbarLog from "../components/menu/Navbarmenu";
 
 
 export default function CalculoPercentil(props) { 

@@ -15,7 +15,7 @@
     import AdapterDateFns from '@mui/lab/AdapterDateFns';
     import LocalizationProvider from '@mui/lab/LocalizationProvider';
     import DatePicker from '@mui/lab/DatePicker';
-    import NavbarLog from "../components/menu/NavbarmenuLog";
+    import NavbarLog from "../components/menu/Navbarmenu";
     
 //importo llamada a endpoint
 import {agregarHijo} from "../controller/miApp.controller";

@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Navbar from "../components/menu/Navbarmenu";
 import DropdownMenuHijo from "../components/dropdownsMenu/dropdownMenuHijo";
 import ControlPediatricoImg from '../img/ControlPediatrico.jpg'
-import NavbarLog from "../components/menu/NavbarmenuLog";
+import NavbarLog from "../components/menu/Navbarmenu";
 
 function VisitasPediatricas() { 
     return (

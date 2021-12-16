@@ -18,7 +18,7 @@ import DatePicker from "../components/datepicker";
     import Icono from "../img/ModificarPerfil.png";
     import Footer from "../components/footer"
     import SocialMedia from '../components/socialmedia';
-    import NavbarLog from "../components/menu/NavbarmenuLog";
+    import NavbarLog from "../components/menu/Navbarmenu";
 
     import {updateUser} from "../controller/miApp.controller";
 

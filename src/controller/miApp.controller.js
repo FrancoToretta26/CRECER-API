@@ -227,7 +227,18 @@ export const addVacuna= async function(addVacuna)
         console.log("response",response);
         let data = await response.json();
         console.log("jsonresponse",data);
+        switch(rdo)
+        {
+            case 200:   
+            { 
+                return ({rdo:0,mensaje:"Ok"});//correcto
+            }
+            case 201:   
+            { 
+                return ({rdo:0,mensaje:"Ok"});//correcto
+            }
     }
+}
     catch(error)
     {
         console.log("error",error);
@@ -323,6 +334,52 @@ export const getPreguntaSeguridad= async function(user)
                 return ({rdo:0,mensaje:"Ok"});//correcto
 
         }
+    }
+
+catch(error)
+{
+    console.log("error",error);
+};
+}
+
+export const sendMail= async function(user)
+{
+    //url webservices
+    let url = urlWebServices.sendMail;
+    //armo json con datos
+    const formData = new URLSearchParams();
+    formData.append('destinatario', user.email);
+
+    console.log("dato",formData);
+    //console.log("url",url);
+    try
+    {
+        let response = await fetch(url,{
+            method: 'POST', 
+            mode: "cors",
+            headers:{
+                'Accept':'application/x-www-form-urlencoded',
+               // 'x-access-token': WebToken.webToken,
+                'Origin':'http://localhost:3000',
+                'Content-Type': 'application/x-www-form-urlencoded'},
+            body: formData,
+            
+        });
+        
+        let rdo = response.status;
+        console.log("response",response);
+        let data = await response.json();
+        console.log("jsonresponse",data);
+        switch(rdo)
+        {
+            case 201:
+            {
+                //guardo token
+                localStorage.setItem("codigo",data.codigo);     
+                return ({rdo:0,mensaje:"Ok"});//correcto
+            }
+        }
+
     }
 
 catch(error)

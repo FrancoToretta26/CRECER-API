@@ -50,12 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-  const PREGUNTA = JSON.parse(localStorage.getItem("preguntaARRAY"))
-  console.log(PREGUNTA)
-
-  const USERS = JSON.parse(localStorage.getItem('usuarios'))
-  console.log(USERS)
-
+  console.log(localStorage.getItem('codigo'))
   return (
     <Grid container component="loginmain" className={classes.root}>
       <CssBaseline />
@@ -66,7 +61,7 @@ export default function SignInSide() {
         <img src={Icono} width="45" height="45x"/> 
         <br/>    
           <Typography component="h1" variant="h5">
-            Cambio de Contraseña
+            Ingrese el código que se le fue enviado a su correo electrónico
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -75,20 +70,9 @@ export default function SignInSide() {
               required
               fullWidth
               id="SQ"
-              label="Pregunta de Seguridad"
+              label="Codigo"
               name="SQ"
               autoComplete="SQ"
-              autoFocus
-            />
-                       <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="Respuesta-SQ"
-              label="Respuesta"
-              name="Respuesta-SQ"
-              autoComplete="Respuesta-SQ"
               autoFocus
             />
             <Button href="/nueva-contraseña"

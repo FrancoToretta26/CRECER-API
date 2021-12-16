@@ -12,7 +12,6 @@ import Login from "./pages/LoginPage";
 import Registro from "./pages/RegisterPage"
 import Footer from "./components/footer";
 import Navbarmenu from './components/menu/Navbarmenu';
-import NavbarmenuLog from './components/menu/NavbarmenuLog';
 import VisitasPediatricas from './pages/VisitasPediatricas';
 import Contacto from "./pages/Contact";
 import OlvidoContraseña from "./pages/OlvidoContraseña/olvido-contraseñaDNI";

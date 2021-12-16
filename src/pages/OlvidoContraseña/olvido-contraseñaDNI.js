@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import Icono from "../../img/OlvidoContraseña.png";
 import Imagen from '../../img/CambioContra.jpg';
-import { getPreguntaSeguridad } from "../../controller/miApp.controller"
+import { sendMail } from "../../controller/miApp.controller"
 
 
 
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUpSide(props) {
   const classes = useStyles();
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  const [dni, setdni]= React.useState('')
+  const [email, setEmail]= React.useState('')
 
 
   setTimeout(function() {
@@ -68,8 +68,8 @@ export default function SignUpSide(props) {
  
   const { ...rest } = props;
 
-  const handleDNI=(event)=>{
-    setdni(event.target.value);
+  const handleEmail=(event)=>{
+    setEmail(event.target.value);
   }
 
 
@@ -77,9 +77,9 @@ export default function SignUpSide(props) {
 const Pregunta= async function()
 {
  let datos = {
-   dni: dni,
+   email: email,
  }
- let getUpdate = await getPreguntaSeguridad(datos)
+ let codigo = await sendMail(datos)
 
 }  
 
@@ -94,7 +94,7 @@ const Pregunta= async function()
         <br/>
         <img src={Icono} width="55" height="55"/>          
         <Typography component="h1" variant="h5">
-            Ingresar el DNI
+            Ingresar el Correo Electronico
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -102,16 +102,16 @@ const Pregunta= async function()
               margin="normal"
               required
               fullWidth
-              name="dni"
-              id="dni"
-              type='dni'
-              label="dni"
+              name="email"
+              id="email"
+              type='email'
+              label="Correo Electronico"
               formControlProps={{
                 fullWidth: true
               }}
               inputProps={{
-                type: "dni",
-                onChange: (event) => handleDNI(event),
+                type: "email",
+                onChange: (event) => handleEmail(event),
               }}
             />
                      
@@ -123,7 +123,7 @@ const Pregunta= async function()
               color="primary"
               onClick={Pregunta}
             >
-              Enviar
+              Recuperar Contraseña
             </Button>
             <br/>
             <br/>

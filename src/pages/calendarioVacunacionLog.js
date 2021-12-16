@@ -23,7 +23,7 @@ import DatePicker from '@mui/lab/DatePicker';
 import TextField from '@material-ui/core/TextField';
 import {addVacuna, getHijosByName, getvacunasByMail, vacunaExistente} from "../controller/miApp.controller";
 import { Icon } from '@iconify/react';
-import NavbarLog from "../components/menu/NavbarmenuLog";
+import NavbarLog from "../components/menu/Navbarmenu";
 
 function VisitasPediatricas() { 
   const [hijos, sethijos] = React.useState('');
@@ -134,10 +134,6 @@ function VisitasPediatricas() {
       
       const dosiss = [
         {
-          value: 'Unica Dosis',
-          label: 'Unica Dosis',
-        },
-        {
           value: '1 Dosis',
           label: '1 Dosis',
         },
@@ -168,18 +164,16 @@ function VisitasPediatricas() {
         lugar:lugar,
         dosis:dosis,
       }
-      var existeVacuna = await vacunaExistente(datos)
-      console.log('existeVacuna', existeVacuna)
-      if(!existeVacuna){
-        let getRegistro = await addVacuna(datos)
-        let getHijos = await getHijosByName()
-        let getVacunas = await getvacunasByMail()
-        window.location.reload(false);
-
+      let agregarVacuna= await addVacuna(datos)
+      if(agregarVacuna){
+        alert('Vacuna creada correctamente');
       }
-      else{
-        alert('La vacuna que quiere cargar ya existe')
+      if(!agregarVacuna){
+        alert('La vacuna ya ha sido colocada')
       }
+      let getHijos = await getHijosByName()
+      let getVacunas = await getvacunasByMail()
+      window.location.reload(false);
     
   }  
 

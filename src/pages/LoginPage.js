@@ -22,7 +22,7 @@ import Navbar from "../components/menu/Navbarmenu";
 
 
 //importo llamada a endpoint
-import {login, getUsers} from "../controller/miApp.controller";
+import {login, getUsers, getHijosByName, getvacunasByMail} from "../controller/miApp.controller";
 
 const useStyles = makeStyles(styles);
 
@@ -87,8 +87,17 @@ export default function LoginPage(props) {
     console.log(usuarios)
   }
 
+  const mostrarTodo= async function()
+  {
+      let getVacunas = await getvacunasByMail()
+      let getRegistro = await getHijosByName()
+  }
+
+
   const redirect= ()=>{
     if (usuarioValido) {
+      mostrarTodo();
+
 
       return <Redirect to='/home' />
     }

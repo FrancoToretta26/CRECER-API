@@ -13,7 +13,7 @@ import Card2 from "../components/cards/card2";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Card4 from "../components/cards/card4";
-import NavbarLog from "../components/menu/NavbarmenuLog";
+import NavbarLog from "../components/menu/Navbarmenu";
 
 function Home() { 
   return (

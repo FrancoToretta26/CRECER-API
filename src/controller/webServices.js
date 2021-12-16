@@ -1,4 +1,3 @@
-import { vacunaExistente } from "./miApp.controller";
 
 const urlApi = "http://localhost:4000/";
 //const urlApi = "https://api-viernes.herokuapp.com/";
@@ -20,8 +19,9 @@ const urlWebServices = {
     getPreguntaSeguridad: urlApi + "api/users/getPreguntaSeguridad",
     addVisita: urlApi + "api/visitas/registration",
     addVacuna: urlApi + "api/vacunas/registration",
+    sendMail: urlApi + 'api/users/sendMail',
     getvacunasByMail: urlApi + 'api/vacunas/VacunaByMail',
-    vacunaExistente: urlApi + 'api/vacunas/vacunaExistente'
+
 
 }
 
