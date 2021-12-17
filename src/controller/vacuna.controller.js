@@ -10,7 +10,6 @@ export const addVacuna= async function(addVacuna)
     formData.append('nombreHijo', addVacuna.hijos);
     formData.append('fechaVacunacion', addVacuna.fechaVacunacion);
     formData.append('vacuna', addVacuna.vacuna);
-    formData.append('vacunaAlternativa', addVacuna.otro);
     formData.append('lugar', addVacuna.lugar);
     formData.append('dosis', addVacuna.dosis);
     formData.append('emailUsuario',localStorage.getItem("emailSave"))

@@ -23,7 +23,7 @@ import Navbar from "../components/menu/Navbarmenu";
 
 //importo llamada a endpoint
 import {getvacunasByMail} from "../controller/vacuna.controller";
-import {getHijosByName} from "../controller/hijo.controller"
+import {getHijosByMail} from "../controller/hijo.controller"
 import {login, getUsers} from "../controller/user.controller";
 
 const useStyles = makeStyles(styles);
@@ -92,7 +92,7 @@ export default function LoginPage(props) {
   const mostrarTodo= async function()
   {
       let getVacunas = await getvacunasByMail()
-      let getRegistro = await getHijosByName()
+      let getRegistro = await getHijosByMail()
   }
 
 

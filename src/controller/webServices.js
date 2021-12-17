@@ -9,7 +9,7 @@ const urlWebServices = {
     login:urlApi +"api/users/login",
     updateUser: urlApi + "api/users/updateUser",
     updateHijo: urlApi + "api/hijos/updateHijo",
-    getHijosByName: urlApi + "api/hijos/HijoByName",
+    getHijosByMail: urlApi + "api/hijos/HijoByMail",
     getUsers: urlApi + "api/users/getUsers",
     addVisita: urlApi + "api/visitas/addVisita",
     addVacuna: urlApi + "api/vacunas/addVacuna",

@@ -17,7 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import { render } from "react-dom";
 import { Icon } from '@iconify/react';
 import {getvacunasByMail} from "../controller/vacuna.controller";
-import {updateHijo, getHijosByName} from "../controller/hijo.controller";
+import {updateHijo, getHijosByMail} from "../controller/hijo.controller";
 import NavbarLog from "../components/menu/Navbarmenu";
 
 
@@ -1167,7 +1167,7 @@ export default function CalculoPercentil(props) {
       } 
       let updateaHijo = await updateHijo(datos)
       let getVacunas = await getvacunasByMail()
-      let getHijos = await getHijosByName()
+      let getHijos = await getHijosByMail()
       window.location.reload(false);
     
   }  

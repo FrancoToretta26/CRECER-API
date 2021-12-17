@@ -38,10 +38,10 @@ export const updateHijo= async function(update)
     };
 }
 
-export const getHijosByName= async function(hijo)
+export const getHijosByMail= async function(hijo)
 {
      //url webservices
-     let url = urlWebServices.getHijosByName;
+     let url = urlWebServices.getHijosByMail;
      const formData = new URLSearchParams();
      formData.append('emailUsuario',localStorage.getItem("emailSave"))
      //armo json con datos

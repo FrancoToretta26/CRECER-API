@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import PercentilPeso from '../img/PercentilPeso.png'
 import PercentilAltura from '../img/PercentilAltura'
 import PercentilCabeza from '../img/PercentilCabeza.png';
-import {getHijosByName} from "../controller/visita.controller";
+import {getHijosByMail} from "../controller/hijo.controller";
 import MenuItem from '@material-ui/core/MenuItem';
 import { Card, Stack } from '@mui/material';
 import { maxHeight } from "@material-ui/system";

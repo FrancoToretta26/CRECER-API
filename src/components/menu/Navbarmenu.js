@@ -3,7 +3,7 @@ import {NavLink, Link} from 'react-router-dom';
 import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import logo from '../../img/ChildrenLogo.png';
 import {getvacunasByMail} from "../../controller/vacuna.controller";
-import {getHijosByName} from "../../controller/hijo.controller"
+import {getHijosByMail} from "../../controller/hijo.controller"
 
 
 const Navbarmenu = () => {
@@ -38,7 +38,7 @@ const Navbarmenu = () => {
     const mostrarTodo= async function()
     {
         let getVacunas = await getvacunasByMail()
-        let getRegistro = await getHijosByName()
+        let getRegistro = await getHijosByMail()
     }
 
 if(localStorage.getItem('emailSave')){

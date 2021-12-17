@@ -16,7 +16,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import TextField from '@material-ui/core/TextField';
 import {addVacuna, getvacunasByMail} from "../controller/vacuna.controller";
-import { getHijosByName } from "../controller/hijo.controller";
+import { getHijosByMail } from "../controller/hijo.controller";
 import { Icon } from '@iconify/react';
 import NavbarLog from "../components/menu/Navbarmenu";
 
@@ -163,7 +163,7 @@ function VisitasPediatricas() {
       if(!agregarVacuna){
         alert('La vacuna ya ha sido colocada')
       }
-      let getHijos = await getHijosByName()
+      let getHijos = await getHijosByMail()
       let getVacunas = await getvacunasByMail()
       window.location.reload(false);
     

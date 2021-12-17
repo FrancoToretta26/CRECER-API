@@ -20,7 +20,7 @@
 //importo llamada a endpoint
 import {agregarHijo} from "../controller/hijo.controller";
 import {addVacuna, getvacunasByMail} from "../controller/vacuna.controller";
-import { getHijosByName } from "../controller/hijo.controller";
+import { getHijosByMail } from "../controller/hijo.controller";
 
     function Copyright() {
       return (
@@ -1403,7 +1403,7 @@ setsangreDropdown(event.target.value);
        edad:edad,
      }
      let getRegistro = await agregarHijo(datos)
-     let getHijos = await getHijosByName()
+     let getHijos = await getHijosByMail()
      let getVacunas = await getvacunasByMail()
      alert('Tu hijo ha sido creado con exito')
      window.location.reload(false)
