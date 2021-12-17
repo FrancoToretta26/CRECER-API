@@ -70,14 +70,14 @@ if(localStorage.getItem('emailSave')){
                     <NavLink exact activeClassName='is-active' onClick={toggleClass} to={`/aboutus`}> Quienes Somos </NavLink> 
                 </li>
                 <li className="menu-item " ><NavLink onClick={toggleClass} activeClassName='is-active' to={`/contacto`}> Contacto </NavLink> </li>
-                <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="/controles"> Controles <FiChevronDown /> </Link>
+                <li onClick={mostrarTodo} className="menu-item sub__menus__arrows" > <Link to="/calendarioVacunacionLog"> Controles <FiChevronDown /> </Link>
                     <ul className={boxClassSubMenu.join(' ')} > 
                         <li> <NavLink onClick={mostrarTodo} activeClassName='is-active'  to={`/calendarioVacunacionLog`}> Calendario de Vacunación </NavLink> </li>
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/calculoPercentilesLog`}> Cálculo de Percentiles </NavLink> </li>
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/visitas-pediatricasLog`}> Visitas Pediátricas </NavLink> </li>
                     </ul>
                 </li>
-                <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="/controles"> Perfil <FiChevronDown /> </Link>
+                <li onClick={mostrarTodo} className="menu-item sub__menus__arrows" > <Link to="/modificar-perfil"> Perfil <FiChevronDown /> </Link>
                     <ul className={boxClassSubMenu.join(' ')} > 
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/agregarNiño`}> Agregar Niño</NavLink> </li>
                         <li><NavLink onClick={mostrarTodo} activeClassName='is-active' to={`/modificar-niño`}> Modificar Niño</NavLink> </li>

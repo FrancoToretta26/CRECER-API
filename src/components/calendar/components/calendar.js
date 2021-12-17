@@ -20,6 +20,8 @@ import { withTranslation } from "react-i18next";
 import "./calendar.css";
 import {addVisita} from "../../../controller/visita.controller"
 import {updateHijo} from "../../../controller/hijo.controller"
+import {getvacunasByMail} from "../../../controller/vacuna.controller";
+import {getHijosByName} from "../../../controller/hijo.controller"
 
 
 const EVENT_LIMIT = 5;
@@ -263,6 +265,8 @@ class Calendar extends Component {
       {
       let getRegistro = await addVisita(newEvent)
       let getUpdate = await updateHijo(actualizarHijo)
+      let getVacunas = await getvacunasByMail()
+      let getHijos = await getHijosByName()
     }
       enviarDatos()
       this.setState({ events: events.concat(newEvent) }, () => {

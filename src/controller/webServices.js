@@ -11,8 +11,8 @@ const urlWebServices = {
     updateHijo: urlApi + "api/hijos/updateHijo",
     getHijosByName: urlApi + "api/hijos/HijoByName",
     getUsers: urlApi + "api/users/getUsers",
-    addVisita: urlApi + "api/visitas/registration",
-    addVacuna: urlApi + "api/vacunas/registration",
+    addVisita: urlApi + "api/visitas/addVisita",
+    addVacuna: urlApi + "api/vacunas/addVacuna",
     sendMail: urlApi + 'api/users/sendMail',
     getvacunasByMail: urlApi + 'api/vacunas/VacunaByMail',
 

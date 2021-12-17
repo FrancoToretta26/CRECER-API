@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-  console.log(localStorage.getItem('codigo'))
   return (
     <Grid container component="loginmain" className={classes.root}>
       <CssBaseline />
